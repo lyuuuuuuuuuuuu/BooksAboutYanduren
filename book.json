@@ -4,7 +4,11 @@
     "description": "记录下所有的尘埃",
     "language": "zh-hans",
     "plugins": [
-        "theme-api","-sharing"
+	    "-sharing",
+	    "theme-api",
+    	"toggle-chapters",
+    	"tbfed-pagefooter",
+    	"advanced-emoji"
     ],
     "pluginsConfig": {
         "theme-api": {
@@ -19,6 +23,11 @@
                     "name": "Go"
                 }
             ]
-        }
+        },
+        "tbfed-pagefooter": {
+	        "copyright":"Copyright &copy yanduren.com 2018",
+	        "modify_label": "Update Time: ",
+	        "modify_format": "YYYY-MM-DD HH:mm:ss"
+	    }
     }
 }

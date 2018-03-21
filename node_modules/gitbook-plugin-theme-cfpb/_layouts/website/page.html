@@ -1,0 +1,73 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ page.title }} · {{ super() }}{% endblock %}
+
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    {% if page.next and page.next.path %}
+    <link rel="next" href="{{ page.next.path|resolveFile }}" />
+    {% endif %}
+    {% if page.previous and page.previous.path %}
+    <link rel="prev" href="{{ page.previous.path|resolveFile }}" />
+    {% endif %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ "gitbook.js"|resolveAsset }}"></script>
+    <script src="{{ "theme.js"|resolveAsset }}"></script>
+    {% for resource in plugins.resources.js %}
+        {% if resource.url %}
+        <script src="{{ resource.url }}"></script>
+        {% else %}
+        <script src="{{ resource.path|resolveAsset }}"></script>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="book body-wrapper">
+      {% include "website/header.html" %}
+
+      <main class="content content__1-3" id="main" role="main">
+        <div class="content_bar"></div>
+        <div class="content_wrapper">
+
+          <aside class="content_sidebar">
+              {% block book_sidebar %}
+                  {% block search_input %}{% endblock %}
+                  {% block book_summary %}
+                      <nav role="navigation">
+                      {% include "website/summary.html" %}
+                      </nav>
+                  {% endblock %}
+              {% endblock %}
+          </aside>
+
+          <section class="content_main">
+            {% block search_results %}
+                <section class="normal markdown-section">
+                {% block page %}
+                {{ page.content|safe }}
+                {% endblock %}
+                </section>
+            {% endblock %}
+          </section>
+        </div>
+      </main>
+
+      <!-- Load Capital Framework -->
+      <script src="/_assets/js/capital-framework.min.js"></script>
+
+    </div><!-- /.body-wrapper -->
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+        });
+    </script>
+</div>
+{% endblock %}

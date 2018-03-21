@@ -4,7 +4,7 @@
 在不通的系统下连接方式基本机制，大抵不通的是需要涉及不通的工具。
 
 {% method %}
-{% sample lang="Mac OS" %}
+{% sample lang="Mac OS" -%}
 ## Mac OS 连接 VPN 服务器
 
 Mac OS 10.13.3 (17D102) 下已无法直接通过 **偏好设置 - 网络** 来配置 PPTP 类型的 VPN 服务。
@@ -34,7 +34,7 @@ Mac OS 10.13.3 (17D102) 下已无法直接通过 **偏好设置 - 网络** 来�
 
 当按钮底色过度成为绿色时表示连接成功。
 
-{% sample lang="Windows OS" %}
+{% sample lang="Windows OS" -%}
 ## Windows OS 连接 VPN 服务器
 
 本文主要以 Windows 10 作为示例，可以通过网络设置项直接配置 VPN 服务。
@@ -80,7 +80,7 @@ Mac OS 10.13.3 (17D102) 下已无法直接通过 **偏好设置 - 网络** 来�
 
 ![服务已启用](/assets/IMG_1065.PNG "服务已启用")
 
-{% common %}
+
 
 开始你愉快的吃鸡之旅吧！
 
