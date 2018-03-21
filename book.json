@@ -1,0 +1,24 @@
+{
+    "title": "Yanduren",
+    "author": "Yang Lyu",
+    "description": "记录下所有的尘埃",
+    "language": "zh-hans",
+    "plugins": [
+        "theme-api","-sharing"
+    ],
+    "pluginsConfig": {
+        "theme-api": {
+            "languages": [
+                {
+                    "lang": "js",
+                    "name": "JavaScript",
+                    "default": true
+                },
+                {
+                    "lang": "go",
+                    "name": "Go"
+                }
+            ]
+        }
+    }
+}
